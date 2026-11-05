@@ -18,4 +18,11 @@ export const routes: Routes = [
         loadChildren: () =>
             import('./features/series/series.module').then((m) => m.SeriesModule),
     },
+    {
+        path: 'series-marvel',
+        loadChildren: () =>
+            import('./features/series-marvel/series-marvel.module').then(
+                (m) => m.SeriesMarvelModule
+            ),
+    },
 ];
