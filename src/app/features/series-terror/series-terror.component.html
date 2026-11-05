@@ -1,0 +1,54 @@
+<main class="series-container">
+  <header class="subtheme-card header-card">
+    <div class="header-content">
+      <div>
+        <h1 class="page-title">Catálogo de Series de Terror</h1>
+        <p class="page-subtitle">
+          Top 10 series imprescindibles del género terror, suspenso psicológico y sobrenatural
+        </p>
+      </div>
+      <span class="total-counter">{{ series.length }} series registradas</span>
+    </div>
+  </header>
+
+  <section class="subtheme-card table-card">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle border">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" class="text-start">Título</th>
+            <th scope="col">Año de estreno</th>
+            <th scope="col">Plataforma / Cadena</th>
+            <th scope="col">Temporadas</th>
+            <th scope="col">Subgénero</th>
+            <th scope="col" class="text-start">Sinopsis</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (serie of series; track serie.id) {
+            <tr>
+              <th scope="row" class="id-cell">{{ serie.id }}</th>
+              <td class="title-cell text-start">{{ serie.titulo }}</td>
+              <td>{{ serie.anioEstreno }}</td>
+              <td>
+                <span class="platform-pill">{{ serie.plataforma }}</span>
+              </td>
+              <td>
+                <span class="seasons-badge">
+                  {{ serie.temporadas }} {{ serie.temporadas === 1 ? 'temporada' : 'temporadas' }}
+                </span>
+              </td>
+              <td>
+                <span class="badge" [ngClass]="subgeneroBadgeMap[serie.subgenero]">
+                  {{ serie.subgenero }}
+                </span>
+              </td>
+              <td class="synopsis-cell text-start">{{ serie.sinopsis }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
