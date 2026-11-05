@@ -1,14 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { App } from './app';
-import { ActivatedRoute } from '@angular/router';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [
-        { provide: ActivatedRoute, useValue: {} }
-      ],
+      providers: [provideRouter([])],
     })
       .compileComponents();
   });
@@ -18,5 +16,4 @@ describe('App', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
 });
