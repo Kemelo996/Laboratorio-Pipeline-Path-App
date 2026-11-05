@@ -24,6 +24,6 @@ export interface SerieMarvel {
   temporadas: number;
   /** Género principal de la serie */
   genero: GeneroMarvel;
-  /** Breve sinopsis libre de spoilers */
+  /** Breve sinopsis libre de spoilers*/
   sinopsis: string;
 }
