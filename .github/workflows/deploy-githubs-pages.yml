@@ -50,13 +50,13 @@ jobs:
 
       # 7. Configure SPA fallback
       - name: Configure GitHub Pages fallback
-        run: cp ./dist/pipeline-app/browser/index.html ./dist/pipeline-app/browser/404.html
+        run: cp ./dist/Pipeline-Path-App/browser/index.html ./dist/Pipeline-Path-App/browser/404.html
 
       # 7. Subir artefacto generado
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/pipeline-app/browser
+          path: ./dist/Pipeline-Path-App/browser
 
   # Despliegue
   deploy:
@@ -70,4 +70,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
