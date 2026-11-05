@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SeriesMarvelComponent } from './series-marvel.component';
+import { SeriesComponent } from './series.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SeriesMarvelComponent,
+    component: SeriesComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class SeriesMarvelRoutingModule {}
+export class SeriesRoutingModule {}

@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
+        path: '',
+        redirectTo: 'series-terror',
+        pathMatch: 'full',
+    },
+    {
         path: 'series-terror',
         loadChildren: () =>
             import('./features/series-terror/series-terror.module').then(
@@ -9,10 +14,8 @@ export const routes: Routes = [
             ),
     },
     {
-        path: 'series-marvel',
+        path: 'series',
         loadChildren: () =>
-            import('./features/series-marvel/series-marvel.module').then(
-                (m) => m.SeriesMarvelModule
-            ),
+            import('./features/series/series.module').then((m) => m.SeriesModule),
     },
 ];
