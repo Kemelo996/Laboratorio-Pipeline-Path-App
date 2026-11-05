@@ -13,4 +13,9 @@ export const routes: Routes = [
                 (m) => m.SeriesTerrorModule
             ),
     },
+    {
+        path: 'series',
+        loadChildren: () =>
+            import('./features/series/series.module').then((m) => m.SeriesModule),
+    },
 ];
