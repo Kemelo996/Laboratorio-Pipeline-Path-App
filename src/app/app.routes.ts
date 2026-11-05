@@ -7,4 +7,11 @@ export const routes: Routes = [
     { path: 'home', component: Home },
     { path: 'login', component: Login },
     { path: 'register', component: Register },
+    {
+        path: 'series-terror',
+        loadChildren: () =>
+            import('./features/series-terror/series-terror.module').then(
+                (m) => m.SeriesTerrorModule
+            ),
+    },
 ];
